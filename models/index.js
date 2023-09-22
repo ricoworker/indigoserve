@@ -27,7 +27,7 @@ const sequelize = new Sequelize(
   const db = {};
   db.Sequelize = Sequelize;
   db.sequelize = sequelize;
-  db.startup = require('./Startup.Model')(sequelize,Sequelize)
+  db.startup = require('./Startups.Model')(sequelize,Sequelize)
 
 
 

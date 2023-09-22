@@ -11,7 +11,7 @@ app.use(Routes);
 db.sequelize
   .sync()
   .then(() => {
-    console.log('database terkoneksi');
+    console.log('database terkoneksi & altered');
   })
   .catch((err) => {
     console.log('Failed to sync db: ' + err.message);

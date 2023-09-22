@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const Startup = sequelize.define('startup', {
+  const Startups = sequelize.define('startups', {
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
@@ -11,6 +11,7 @@ module.exports = (sequelize, Sequelize) => {
     },
     description: {
       type: Sequelize.TEXT,
+      allowNull: false,
     },
     website: {
       type: Sequelize.STRING,
@@ -20,26 +21,34 @@ module.exports = (sequelize, Sequelize) => {
     },
     tahun_intake: {
       type: Sequelize.DATE,
+      allowNull: false,
     },
     status: {
       type: Sequelize.STRING,
+      allowNull: false,
     },
     jenis_intake: {
       type: Sequelize.STRING,
     },
     id_category: {
       type: Sequelize.INTEGER,
+      allowNull: false,
     },
     id_jenisStartup: {
       type: Sequelize.INTEGER,
+      allowNull: false,
     },
     id_contract: {
       type: Sequelize.INTEGER,
+      allowNull: false,
+      unique: true,
     },
     id_financial: {
       type: Sequelize.INTEGER,
+      allowNull: false,
+      unique: true,
     },
   });
 
-  return Startup;
+  return Startups;
 };
