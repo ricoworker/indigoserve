@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
-  const educationBackground = sequelize.define(
-    'education_background',
+  const experienceBackground = sequelize.define(
+    'experience_background',
     {
       id: {
         type: Sequelize.INTEGER,
@@ -13,20 +13,17 @@ module.exports = (sequelize, Sequelize) => {
       finish_date: {
         type: Sequelize.DATE,
       },
-      collage_school_name: {
+      startup: {
         type: Sequelize.TEXT,
       },
-      major: {
+      position: {
         type: Sequelize.TEXT,
       },
-      title: {
-        type: Sequelize.TEXT,
+      id_founder: {
+        type: Sequelize.INTEGER,
       },
-      id_founder:{
-        type:Sequelize.INTEGER
-      }
     }
   );
 
-  return educationBackground
+  return experienceBackground
 };

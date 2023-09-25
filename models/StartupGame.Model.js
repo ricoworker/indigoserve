@@ -1,24 +1,20 @@
 module.exports = (sequelize, Sequelize) => {
-  const founders = sequelize.define('founders', {
+  const startup_games = sequelize.define('startup_games', {
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
-    contract: {
+    alpha: {
       type: Sequelize.INTEGER,
     },
-    komitmen: {
-      type: Sequelize.TEXT,
+    beta: {
+      type: Sequelize.INTEGER,
     },
-    id_startup: {
+    gold: {
       type: Sequelize.INTEGER,
     },
   });
 
-  return founders
+  return startup_games;
 };

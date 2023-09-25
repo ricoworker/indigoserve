@@ -20,15 +20,30 @@ const sequelize = new Sequelize(
   }
 );
 
- 
+const db = {};
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+db.startup = require('./Startups.Model')(sequelize, Sequelize);
+db.categories = require('./Categories.Model')(sequelize, Sequelize);
+db.contract = require('./Contract.model')(sequelize, Sequelize);
+db.educationbg = require('./EducationsBackground.Model')(
+  sequelize,
+  Sequelize
+);
+db.experiencebg = require('./ExperienceBackground.Model')(
+  sequelize,
+  Sequelize
+);
+db.financial = require('./Financial.Model')(sequelize, Sequelize);
+db.founders = require('./Founders.Model')(sequelize, Sequelize);
+db.jenisstartup = require('./JenisStartups.Model')(
+  sequelize,
+  Sequelize
+);
+db.peformance = require('./Peformance.Model')(sequelize, Sequelize);
+db.startupgame = require('./StartupGame.Model')(sequelize, Sequelize);
+db.synergi = require('./Synergi.Model')(sequelize, Sequelize);
+db.vcinvestor = require('./VcInvestor.Model')(sequelize, Sequelize);
 
 
-
-  const db = {};
-  db.Sequelize = Sequelize;
-  db.sequelize = sequelize;
-  db.startup = require('./Startups.Model')(sequelize,Sequelize)
-
-
-
-module.exports = db
+module.exports = db;

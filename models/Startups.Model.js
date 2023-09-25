@@ -38,16 +38,6 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.INTEGER,
       allowNull: false,
     },
-    id_contract: {
-      type: Sequelize.INTEGER,
-      allowNull: false,
-      unique: true,
-    },
-    id_financial: {
-      type: Sequelize.INTEGER,
-      allowNull: false,
-      unique: true,
-    },
   });
 
   return Startups;
