@@ -1,4 +1,12 @@
-const router = require('express').Router();
-const { addStartup } = require('../controllers/Startup.controller');
+const Router = require('express').Router();
+const {
+  addStartup,
+  getAllStartups,
+  deleteStartupbyId
+} = require('../controllers/Startup.controller');
 
-router.post('/add', addStartup);
+Router.post('/add', addStartup);
+Router.get('/all', getAllStartups);
+Router.delete('/delete/:id', deleteStartupbyId);
+
+module.exports = Router;
