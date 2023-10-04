@@ -60,4 +60,9 @@ db.categories.hasMany(db.startup, {
   as: 'list_startup',
 });
 
+db.startup.hasOne(db.peformance, {
+  foreignKey: 'id_startups',
+  as: 'peformance',
+});
+
 module.exports = db;

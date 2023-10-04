@@ -16,7 +16,7 @@ module.exports = {
   getAllStartups: async (req, res) => {
     try {
       const allStartup = await Startup.findAll({
-        include: ['category'],
+        include: ['category', 'peformance'],
       });
       res.status(200).json(allStartup);
     } catch (error) {
@@ -32,10 +32,35 @@ module.exports = {
       });
 
       if (deleteStartup) {
-        res.send('tergapus');
+        res.send('terhapus');
       } else res.send('id tidak ditemukan');
     } catch (error) {
       console.log(error);
+    }
+  },
+
+  editStartupbyId: async (req, res) => {
+    try {
+      const body = req.body;
+      const { id } = req.params;
+
+      const editedStartups = await Startup.update(body, {
+        where: {
+          id: id,
+        },
+      });
+
+      if (editedStartups[0] > 0) {
+        const editedSuccess = await Startup.findOne({
+          where: { id: id },
+        });
+        res.status(200).json(editedSuccess);
+      } else {
+        res.status(404).json('ID tidak ditemukan');
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(500).json('Terjadi kesalahan server');
     }
   },
 };

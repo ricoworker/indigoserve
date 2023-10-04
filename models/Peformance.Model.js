@@ -17,11 +17,14 @@ module.exports = (sequelize, Sequelize) => {
     action_paln: {
       type: Sequelize.TEXT,
     },
+    id_startups: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+    },
     tanggal_update: {
       type: Sequelize.DATE,
     },
-   
   });
 
-  return peformance
+  return peformance;
 };

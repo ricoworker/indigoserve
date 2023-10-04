@@ -33,6 +33,10 @@ module.exports = (sequelize, Sequelize) => {
     description: {
       type: Sequelize.TEXT,
     },
+    id_startup: {
+      type: Sequelize.INTEGER,
+      unique: true,
+    },
   });
   return synergi;
 };
