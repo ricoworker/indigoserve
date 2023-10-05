@@ -45,11 +45,6 @@ db.startupgame = require('./StartupGame.Model')(sequelize, Sequelize);
 db.synergi = require('./Synergi.Model')(sequelize, Sequelize);
 db.vcinvestor = require('./VcInvestor.Model')(sequelize, Sequelize);
 
-// db.products.belongsTo(db.category, {
-//   foreignKey: 'category',
-//   as: 'category makanan',
-// });
-
 db.startup.belongsTo(db.categories, {
   foreignKey: 'id_category',
   as: 'category',
@@ -63,6 +58,11 @@ db.categories.hasMany(db.startup, {
 db.startup.hasOne(db.peformance, {
   foreignKey: 'id_startups',
   as: 'peformance',
+});
+
+db.startup.hasOne(db.synergi, {
+  foreignKey: 'id_startups',
+  as: 'synergi',
 });
 
 module.exports = db;

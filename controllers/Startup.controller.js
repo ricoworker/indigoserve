@@ -16,7 +16,7 @@ module.exports = {
   getAllStartups: async (req, res) => {
     try {
       const allStartup = await Startup.findAll({
-        include: ['category', 'peformance'],
+        include: ['category', 'peformance', 'synergi'],
       });
       res.status(200).json(allStartup);
     } catch (error) {
@@ -32,7 +32,10 @@ module.exports = {
       });
 
       if (deleteStartup) {
-        res.send('terhapus');
+        const allStartups = await Startup.findAll({
+          include: ['category', 'peformance', 'synergi'],
+        });
+        res.status(200).json(allStartups);
       } else res.send('id tidak ditemukan');
     } catch (error) {
       console.log(error);

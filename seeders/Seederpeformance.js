@@ -14,7 +14,7 @@ module.exports = {
   project_status:'project status',
   initial_date:'12-06-2022',
   description:'ini deskripsi dari seeding',
-  id_startups:3
+  id_startups:4
 }
    ])
   },

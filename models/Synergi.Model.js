@@ -33,7 +33,7 @@ module.exports = (sequelize, Sequelize) => {
     description: {
       type: Sequelize.TEXT,
     },
-    id_startup: {
+    id_startups: {
       type: Sequelize.INTEGER,
       unique: true,
     },

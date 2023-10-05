@@ -38,6 +38,11 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.INTEGER,
       allowNull: false,
     },
+    startup_profile: {
+      type: Sequelize.TEXT,
+      allowNull: false,
+      unique: false,
+    },
   });
 
   return Startups;
